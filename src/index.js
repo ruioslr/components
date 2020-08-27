@@ -5,8 +5,8 @@ import DatePicker from "./DatePicker/index";
 
 
 function App() {
-    return <DatePicker/>
+    return <div><DatePicker/></div>
 }
 
 
-ReactDom.render(<App />, document.querySelector('#root'));
+ReactDom.render(<App/>, document.querySelector('#root'));
