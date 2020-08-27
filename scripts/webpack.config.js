@@ -11,7 +11,11 @@ module.exports = {
         filename: 'index.js'
     },
     resolve: {
-        extensions: [".js", ".json", '.jsx']
+        extensions: [".js", ".json", '.jsx', 'ts', 'tsx'],
+        alias: {
+            '@rc': path.resolve(__dirname, '../RC'),
+            '@antd': path.resolve(__dirname, '../Antd')
+        }
     },
     mode: "development",
     module: {
@@ -22,6 +26,10 @@ module.exports = {
                 use: {
                     loader: 'babel-loader',
                     options: {
+                        plugins:[['import', {
+                            "libraryName": "antd",
+                            "style": true,   // or 'css'
+                        }]],
                         presets: ['@babel/preset-env', "@babel/preset-react"]
                     }
                 }
@@ -33,9 +41,19 @@ module.exports = {
                 }, {
                     loader: "css-loader"
                 }, {
-                    loader: "less-loader"
+                    loader: "less-loader",
+                    options: {
+                        lessOptions: {
+                            javascriptEnabled: true
+                        }
+                    }
                 }]
-            }
+            },
+            {
+                test: /\.tsx?$/,
+                use: 'ts-loader',
+                exclude: /node_modules/,
+            },
         ]
     },
     plugins: [

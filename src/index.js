@@ -1,11 +1,16 @@
 import React from 'react';
-import ReactDom from 'react-dom'
+import ReactDom from 'react-dom';
+import {DatePicker} from 'antd';
 
-import DatePicker from "./DatePicker/index";
+import MyDatePicker from "./DatePicker/index";
+
 
 
 function App() {
-    return <div><DatePicker/></div>
+    return <div>
+        <MyDatePicker/>
+        <DatePicker />
+    </div>
 }
 
 
