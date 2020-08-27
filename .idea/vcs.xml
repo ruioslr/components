@@ -2,5 +2,7 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Antd/ant-design" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/RC/picker" vcs="Git" />
   </component>
 </project>
